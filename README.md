@@ -152,12 +152,7 @@ devServer: {
 
 
 
-### Troubleshooting
 
-- If you see errors about missing static assets or React Router context, make sure:
-  - You are running tests from the `Addis-Frontend` directory.
-  - All dependencies are installed (`npm install`).
-  - You have not changed the test or component structure.
 
 ---
 
