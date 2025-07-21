@@ -116,4 +116,51 @@ devServer: {
 
 ---
 
+## Frontend Testing
+
+### What’s Included
+
+- **Unit and Component Tests:**  
+  Two real unit/component tests were added for the React frontend using **Jest** and **React Testing Library**:
+  - `src/__tests__/album.test.jsx`: Tests that the Album component renders the album title and artist.
+  - `src/__tests__/song.test.jsx`: Tests that the Song component renders the song title and the "Duration:" label.
+
+- **Test Organization:**  
+  All test files are located in `src/__tests__/` for easy management and discovery.
+
+- **Jest Configuration:**  
+  - Static assets (images, etc.) are mocked for compatibility.
+  - The test environment is set to `jsdom` for React DOM support.
+  - React Router context is provided in tests using `<MemoryRouter>`.
+
+### How to Run the Tests
+
+1. **Install dependencies** (if you haven’t already):
+
+   ```bash
+   cd Addis-Frontend
+   npm install
+   ```
+
+2. **Run the tests:**
+
+   ```bash
+   npm test
+   ```
+
+   This will run all tests in the `src/__tests__/` directory using Jest.
+
+3. **What to expect:**
+   - You should see output indicating that both the Album and Song component tests pass.
+   - If you add more tests to `src/__tests__/`, they will be picked up automatically.
+
+### Troubleshooting
+
+- If you see errors about missing static assets or React Router context, make sure:
+  - You are running tests from the `Addis-Frontend` directory.
+  - All dependencies are installed (`npm install`).
+  - You have not changed the test or component structure.
+
+---
+
 
