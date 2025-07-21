@@ -11,7 +11,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-  origin: ['http://localhost:9001'], 
+  origin: ['https://addis-test-project-phi.vercel.app/'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, 
 };
