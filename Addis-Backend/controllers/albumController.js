@@ -32,12 +32,18 @@ const createAlbum = async (req, res) => {
 // Get album by ID
 const getAlbumById = async (req, res) => {
   try {
-    const album = await Album.findById(req.params.albumId).populate('songs');
+    const album = await Album.findById(req.params.albumId);
     if (!album) {
       return res.status(404).json({ error: 'Album not found' });
     }
-    res.json(album);
+    
+    const songs = await Song.find({ album: album._id }).populate('album');
+    res.json({ album, songs });
   } catch (error) {
+    
+    if (error.name === 'CastError') {
+      return res.status(404).json({ error: 'Album not found' });
+    }
     res.status(500).json({ error: error.message });
   }
 };
@@ -114,8 +120,7 @@ const getAlbumsAndSongs = async (req, res) => {
 
     else if(!query && filter === 'song'){
         results.songs = await Song.find().populate('album').skip(skip).limit(limit);
-        totalAlbums = await Song.songDocuments();
-    
+        totalAlbums = await Song.countDocuments();
     }
     
     else{
@@ -129,7 +134,7 @@ const getAlbumsAndSongs = async (req, res) => {
     switch (filter.toLowerCase()) {
       case 'song':
         results.songs = await Song.find(searchQuery).populate('album').skip(skip).limit(limit);
-        totalAlbums = await Song.songDocuments();
+        totalAlbums = await Song.countDocuments();
         break;
       case 'album':        
         results.albums = await Album.find(searchQuery).skip(skip).limit(limit);
@@ -157,7 +162,7 @@ const getAlbumsAndSongs = async (req, res) => {
       }
      };
 
-    res.json();
+    res.json(response);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
