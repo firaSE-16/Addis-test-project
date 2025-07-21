@@ -44,7 +44,7 @@ Create a `.env` file with the following environment variables:
 CLOUDINARY_CLOUD_NAME=dx3d8zvcs
 CLOUDINARY_API_KEY=825392158487624
 CLOUDINARY_API_SECRET=xGczTl8qQqO3dmLsIC1z2mnOq4U
-MONGODB_URI=mongodb+srv://loariftech:addissoftware@cluster0.nio2zql.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=mongodb://127.0.0.1:27017/addis_software
 PORT=8000
 ```
 
