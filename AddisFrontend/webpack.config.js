@@ -14,13 +14,13 @@ module.exports = {
 
     mode:"development",
 
-    devServer:{
-        static:path.join(__dirname,"public"),
-        port:9001,
-        hot:true,
-        open:true,
-        historyApiFallback:true,
-    },
+    devServer: {
+                static: path.join(__dirname, "public"),
+                port: 9001,
+                hot: true,
+                open: true,
+                historyApiFallback: true,
+                },
 
     module:{
         rules:[
