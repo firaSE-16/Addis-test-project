@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-    entry:"./src/index.js",
+    entry:"./src/index.jsx",
 
     output:{
         path:path.resolve(__dirname,"dist"),
@@ -16,7 +16,7 @@ module.exports = {
 
     devServer:{
         static:path.join(__dirname,"public"),
-        port:8000,
+        port:9001,
         hot:true,
         open:true,
         historyApiFallback:true,
@@ -28,6 +28,16 @@ module.exports = {
                 test:/\.(js|jsx)$/,
                 exclude:/node_modules/,
                 use:"babel-loader",
+            },
+            {
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: [
+                    {
+                    loader: '@svgr/webpack',
+                    options: { icon: true },
+                    },
+                ],
             },
             {
                 test: /\.css$/,

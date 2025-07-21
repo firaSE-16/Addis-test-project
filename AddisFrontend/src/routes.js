@@ -10,7 +10,7 @@ const AppRoutes = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/form" element={<AddAlbum />} />
-      <Route path="/add-album/:id" element={<AlbumDetail />} />
+      <Route path="/album/:id" element={<AlbumDetail />} />
       <Route path="/edit/album/:id" element={<Edit />} />
     </Routes>
   </Router>
