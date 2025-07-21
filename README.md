@@ -1,80 +1,71 @@
-# Addis Software Project
+Addis Software Project
+A full-stack web application built with a custom Webpack React frontend and a Node.js/Express backend.
 
-A full-stack web application built with a custom Webpack React frontend and a Node.js backend. This project is currently live at [https://addis-test-project-2.vercel.app/](https://addis-test-project-2.vercel.app/)
+Live Demo: https://addis-test-project-2.vercel.app/
 
----
+Project Structure
 
-## 🌐 Live Demo
-
-👉 [Visit the Live Site](https://addis-test-project-2.vercel.app/)
-
----
-
-## 📁 Project Structure
-
-# Addis-Software-Project/
+Addis-Software-Project/
 │
-├── Addis-Frontend/ → Frontend built with React, Webpack
-└── Addis-Backend/ → Backend built with Node.js/Express
+├── Addis-Frontend/  # React frontend (custom Webpack)
+└── Addis-Backend/   # Node.js/Express backend
+Getting Started
+1. Clone the repository
 
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
 git clone https://github.com/your-username/Addis-Software-Project.git
 cd Addis-Software-Project
+2. Setup Backend
+
 cd Addis-Backend
-```
-.env ```CLOUDINARY_CLOUD_NAME=dx3d8zvcs
+
+I am sharing the .env file content here only to save your time during this project’s setup process. This is not a usual practice for me, and I do it here solely to make things easier and faster for you, not because I am careless or lazy.
+
+Create a .env file with the following environment variables:
+
+CLOUDINARY_CLOUD_NAME=dx3d8zvcs
 CLOUDINARY_API_KEY=825392158487624
 CLOUDINARY_API_SECRET=xGczTl8qQqO3dmLsIC1z2mnOq4U
-PORT=8000
 MONGODB_URI=mongodb+srv://loariftech:addissoftware@cluster0.nio2zql.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-PORT=8000```
+PORT=8000
+Install dependencies and start the backend server:
 
-npm install  
-npm start 
-```bash
-cd ../Addis-Frontend ```
-.env ```
+
+npm install
+npm start
+3. Setup Frontend
+Open a new terminal and run:
+
+
+cd ../Addis-Frontend
+Create a .env file with:
+
+
 API_BASE_URL=http://localhost:8000/api
+Install dependencies and start the frontend dev server:
 
 
-⚙️ Webpack Configuration (Frontend)
-The project uses a custom Webpack configuration to bundle React and other frontend assets.
-
-Key Features:
+npm install
+npm start
+Webpack Configuration (Frontend)
 Entry Point: ./src/index.jsx
 
 Output: Bundled files output to dist/ folder
 
 Loaders:
+babel-loader: Transpiles JS/JSX to browser-compatible JavaScript
 
-babel-loader: Transpile JS/JSX
+@svgr/webpack: Imports SVGs as React components
 
-@svgr/webpack: Load SVGs as React components
+css-loader and style-loader: Process and inject CSS styles
 
-css-loader, style-loader: Handle CSS
-
-Asset loader for images
+Asset loader: Handles images and other static assets
 
 Plugins:
+HtmlWebpackPlugin: Injects bundled scripts into index.html
 
-HtmlWebpackPlugin: Inject scripts into index.html
-
-dotenv-webpack: Load environment variables from .env
+dotenv-webpack: Loads environment variables from .env into the frontend build
 
 Dev Server:
-
-Port: 9001
-
-Hot reload
-
-Supports SPA routing with historyApiFallback
-
 js
 Copy
 Edit
@@ -83,7 +74,13 @@ devServer: {
   port: 9001,
   hot: true,
   open: true,
-  historyApiFallback: true,
+  historyApiFallback: true, // Supports SPA routing
 }
+Runs on port 9001
 
+Hot Module Replacement enabled for faster development
+
+Automatically opens browser on start
+
+Supports SPA routing fallback
 
