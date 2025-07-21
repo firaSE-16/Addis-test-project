@@ -150,9 +150,7 @@ devServer: {
 
    This will run all tests in the `src/__tests__/` directory using Jest.
 
-3. **What to expect:**
-   - You should see output indicating that both the Album and Song component tests pass.
-   - If you add more tests to `src/__tests__/`, they will be picked up automatically.
+
 
 ### Troubleshooting
 
