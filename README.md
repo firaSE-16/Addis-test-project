@@ -2,7 +2,7 @@ Sure! Here's your complete, polished **README.md** file formatted properly for e
 
 ---
 
-# Addis Software Project
+# Addis Music Project
 
 A full-stack web application built with a custom Webpack React frontend and a Node.js/Express backend.
 
@@ -41,10 +41,10 @@ I am sharing the `.env` file content here only to save your time during this pro
 Create a `.env` file with the following environment variables:
 
 ```
-CLOUDINARY_CLOUD_NAME=dx3d8zvcs
-CLOUDINARY_API_KEY=825392158487624
-CLOUDINARY_API_SECRET=xGczTl8qQqO3dmLsIC1z2mnOq4U
-MONGODB_URI=mongodb://127.0.0.1:27017/addis_software
+CLOUDINARY_CLOUD_NAME=....
+CLOUDINARY_API_KEY=......
+CLOUDINARY_API_SECRET=......
+MONGODB_URI=mongodb://127.0.0.1:27017/addis_music
 PORT=8000
 ```
 
